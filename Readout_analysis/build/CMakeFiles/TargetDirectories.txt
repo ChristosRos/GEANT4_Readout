@@ -1,0 +1,7 @@
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/install/local.dir
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/install/strip.dir
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/install.dir
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/list_install_components.dir
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/rebuild_cache.dir
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/edit_cache.dir
+/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir
