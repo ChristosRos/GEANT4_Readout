@@ -40,7 +40,7 @@ class DetectorConstruction : public G4VUserDetectorConstruction
         G4double GetROThickness()   {return fROThickness;};
         G4double GetROSizeXY()      {return fROSizeXY;};
 
-        G4int GetNbOfLayers()       {return fNbOfLayers;};
+        G4int GetNbOfLayers()       {return fNbOfStrips;};
 
         //G4Material* GetReadoutMaterial() {return fReadoutMaterial;};
         G4Material* GetStripMaterial() {return fStripMaterial;};
@@ -60,7 +60,7 @@ class DetectorConstruction : public G4VUserDetectorConstruction
         //G4Material* fReadoutMaterial;
         //G4double    fReadoutThickness;
 
-        G4int       fNbOfLayers;
+        G4int       fNbOfStrips;
 
         G4double    fROSizeXY;
         G4double    fROThickness;
@@ -78,8 +78,15 @@ class DetectorConstruction : public G4VUserDetectorConstruction
         G4VPhysicalVolume*   fPhysiRO;    // pointer to the physical Readout
 
         G4Box*              fSolidStrip;  // pointer to the solid strip 
-        G4LogicalVolume*    fLogicStrip;  // pointer to the logical strip 
+        G4LogicalVolume*    fLogicStrip;  // pointer to the logical strip x
         G4VPhysicalVolume*  fPhysiStrip;  // pointer to the physical strip 
+
+
+// Added a new way in order to glue everything together and let's see what happens .##########
+        //G4Box*              fSolidDetector; //pointer to the unified detector
+        //G4LogicalVolume*    fLogicDetector; //point to the logical detector
+        //G4VPhysicalVolume*  fPhysiDetector; // pointer to the physical detector (RO+strips)
+//##################-------------------------------#########------#######-------#####
 
         DetectorMessenger*  fDetectorMessenger;   //pointer to the Messenger
 

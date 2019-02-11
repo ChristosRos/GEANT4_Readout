@@ -277,6 +277,33 @@ shared/src/DetectorMessenger.cc.s:
 	$(MAKE) -f CMakeFiles/Readout.dir/build.make CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.s
 .PHONY : shared/src/DetectorMessenger.cc.s
 
+shared/src/DetectorStrip.o: shared/src/DetectorStrip.cc.o
+
+.PHONY : shared/src/DetectorStrip.o
+
+# target to build an object file
+shared/src/DetectorStrip.cc.o:
+	$(MAKE) -f CMakeFiles/Readout.dir/build.make CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o
+.PHONY : shared/src/DetectorStrip.cc.o
+
+shared/src/DetectorStrip.i: shared/src/DetectorStrip.cc.i
+
+.PHONY : shared/src/DetectorStrip.i
+
+# target to preprocess a source file
+shared/src/DetectorStrip.cc.i:
+	$(MAKE) -f CMakeFiles/Readout.dir/build.make CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.i
+.PHONY : shared/src/DetectorStrip.cc.i
+
+shared/src/DetectorStrip.s: shared/src/DetectorStrip.cc.s
+
+.PHONY : shared/src/DetectorStrip.s
+
+# target to generate assembly for a file
+shared/src/DetectorStrip.cc.s:
+	$(MAKE) -f CMakeFiles/Readout.dir/build.make CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.s
+.PHONY : shared/src/DetectorStrip.cc.s
+
 shared/src/EventAction.o: shared/src/EventAction.cc.o
 
 .PHONY : shared/src/EventAction.o
@@ -437,6 +464,9 @@ help:
 	@echo "... shared/src/DetectorMessenger.o"
 	@echo "... shared/src/DetectorMessenger.i"
 	@echo "... shared/src/DetectorMessenger.s"
+	@echo "... shared/src/DetectorStrip.o"
+	@echo "... shared/src/DetectorStrip.i"
+	@echo "... shared/src/DetectorStrip.s"
 	@echo "... shared/src/EventAction.o"
 	@echo "... shared/src/EventAction.i"
 	@echo "... shared/src/EventAction.s"

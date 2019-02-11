@@ -72,6 +72,7 @@ int main(int argc,char** argv)
     
 
 
+
     // Initialize visualization
     //
     G4VisManager* visManager = new G4VisExecutive;
@@ -93,7 +94,7 @@ int main(int argc,char** argv)
         ui->SessionStart();
         delete ui;
     }
-
+    
     // Job termination
     delete visManager;
     delete histo;

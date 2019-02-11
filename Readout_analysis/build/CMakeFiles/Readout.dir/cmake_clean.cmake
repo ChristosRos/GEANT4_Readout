@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Readout.dir/shared/src/ActionInitialization.cc.o"
   "CMakeFiles/Readout.dir/shared/src/DetectorConstruction.cc.o"
   "CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.o"
+  "CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o"
   "CMakeFiles/Readout.dir/shared/src/EventAction.cc.o"
   "CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o"
   "CMakeFiles/Readout.dir/shared/src/RunAction.cc.o"

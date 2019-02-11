@@ -109,9 +109,22 @@ CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/christos/GEANT4/Readout_analysis/shared/src/DetectorMessenger.cc -o CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.s
 
+CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o: CMakeFiles/Readout.dir/flags.make
+CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o: ../shared/src/DetectorStrip.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o -c /Users/christos/GEANT4/Readout_analysis/shared/src/DetectorStrip.cc
+
+CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/christos/GEANT4/Readout_analysis/shared/src/DetectorStrip.cc > CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.i
+
+CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/christos/GEANT4/Readout_analysis/shared/src/DetectorStrip.cc -o CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.s
+
 CMakeFiles/Readout.dir/shared/src/EventAction.cc.o: CMakeFiles/Readout.dir/flags.make
 CMakeFiles/Readout.dir/shared/src/EventAction.cc.o: ../shared/src/EventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Readout.dir/shared/src/EventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Readout.dir/shared/src/EventAction.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Readout.dir/shared/src/EventAction.cc.o -c /Users/christos/GEANT4/Readout_analysis/shared/src/EventAction.cc
 
 CMakeFiles/Readout.dir/shared/src/EventAction.cc.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/Readout.dir/shared/src/EventAction.cc.s: cmake_force
 
 CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o: CMakeFiles/Readout.dir/flags.make
 CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o: ../shared/src/PrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o -c /Users/christos/GEANT4/Readout_analysis/shared/src/PrimaryGeneratorAction.cc
 
 CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.s: cmake_force
 
 CMakeFiles/Readout.dir/shared/src/RunAction.cc.o: CMakeFiles/Readout.dir/flags.make
 CMakeFiles/Readout.dir/shared/src/RunAction.cc.o: ../shared/src/RunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Readout.dir/shared/src/RunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Readout.dir/shared/src/RunAction.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Readout.dir/shared/src/RunAction.cc.o -c /Users/christos/GEANT4/Readout_analysis/shared/src/RunAction.cc
 
 CMakeFiles/Readout.dir/shared/src/RunAction.cc.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/Readout.dir/shared/src/RunAction.cc.s: cmake_force
 
 CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.o: CMakeFiles/Readout.dir/flags.make
 CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.o: ../shared/src/SteppingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.o -c /Users/christos/GEANT4/Readout_analysis/shared/src/SteppingAction.cc
 
 CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/Readout.dir/shared/src/SteppingAction.cc.s: cmake_force
 
 CMakeFiles/Readout.dir/src/HistoManager.cc.o: CMakeFiles/Readout.dir/flags.make
 CMakeFiles/Readout.dir/src/HistoManager.cc.o: ../src/HistoManager.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Readout.dir/src/HistoManager.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Readout.dir/src/HistoManager.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Readout.dir/src/HistoManager.cc.o -c /Users/christos/GEANT4/Readout_analysis/src/HistoManager.cc
 
 CMakeFiles/Readout.dir/src/HistoManager.cc.i: cmake_force
@@ -180,6 +193,7 @@ Readout_OBJECTS = \
 "CMakeFiles/Readout.dir/shared/src/ActionInitialization.cc.o" \
 "CMakeFiles/Readout.dir/shared/src/DetectorConstruction.cc.o" \
 "CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.o" \
+"CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o" \
 "CMakeFiles/Readout.dir/shared/src/EventAction.cc.o" \
 "CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/Readout.dir/shared/src/RunAction.cc.o" \
@@ -193,6 +207,7 @@ Readout: CMakeFiles/Readout.dir/Readout.cc.o
 Readout: CMakeFiles/Readout.dir/shared/src/ActionInitialization.cc.o
 Readout: CMakeFiles/Readout.dir/shared/src/DetectorConstruction.cc.o
 Readout: CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.o
+Readout: CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o
 Readout: CMakeFiles/Readout.dir/shared/src/EventAction.cc.o
 Readout: CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o
 Readout: CMakeFiles/Readout.dir/shared/src/RunAction.cc.o
@@ -213,6 +228,21 @@ Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4error_propagation.dylib
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4readout.dylib
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4physicslists.dylib
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4parmodels.dylib
+Readout: /opt/local/libexec/root6/lib/root/libCore.so
+Readout: /opt/local/libexec/root6/lib/root/libRIO.so
+Readout: /opt/local/libexec/root6/lib/root/libNet.so
+Readout: /opt/local/libexec/root6/lib/root/libHist.so
+Readout: /opt/local/libexec/root6/lib/root/libGraf.so
+Readout: /opt/local/libexec/root6/lib/root/libGraf3d.so
+Readout: /opt/local/libexec/root6/lib/root/libGpad.so
+Readout: /opt/local/libexec/root6/lib/root/libTree.so
+Readout: /opt/local/libexec/root6/lib/root/libRint.so
+Readout: /opt/local/libexec/root6/lib/root/libPostscript.so
+Readout: /opt/local/libexec/root6/lib/root/libMatrix.so
+Readout: /opt/local/libexec/root6/lib/root/libPhysics.so
+Readout: /opt/local/libexec/root6/lib/root/libMathCore.so
+Readout: /opt/local/libexec/root6/lib/root/libThread.so
+Readout: /opt/local/libexec/root6/lib/root/libMultiProc.so
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4FR.dylib
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4vis_management.dylib
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4modeling.dylib
@@ -247,7 +277,7 @@ Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4intercoms.dylib
 Readout: /opt/local/lib/Geant4/Geant4.10.3/libG4global.dylib
 Readout: /opt/local/lib/libCLHEP.dylib
 Readout: CMakeFiles/Readout.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Readout"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Readout"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Readout.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

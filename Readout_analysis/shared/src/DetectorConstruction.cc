@@ -21,6 +21,9 @@
 #include "G4RunManager.hh"
 #include "G4UserLimits.hh"
 
+#include "DetectorStrip.hh"
+
+
 
 
 
@@ -31,10 +34,10 @@ DetectorConstruction::DetectorConstruction()
  fStripMaterial(0),fDefaultMaterial(0), 
  fSolidWorld(0),fLogicWorld(0),fPhysiWorld(0),
  fSolidRO(0),fLogicRO(0),fPhysiRO(0),
- fSolidStrip(0),fLogicStrip(0),fPhysiStrip(0),
+ fSolidStrip(0),fLogicStrip(NULL),fPhysiStrip(0),
  fDetectorMessenger(0)
  {
-     fNbOfLayers = 1; 
+     fNbOfStrips = 10; 
      fStripThickness = 0.05*cm;
      fROThickness = 0.15*cm;
      fROSizeXY = 30*cm;
@@ -46,12 +49,17 @@ DetectorConstruction::DetectorConstruction()
      SetTargetMaterial("G4_Cu");
      //SetReadoutMaterial("G4_Pb");
 
+    
      // create commands for interactive definition of the Readout
+     
      fDetectorMessenger = new DetectorMessenger(this); 
  }
 
  DetectorConstruction::~DetectorConstruction()
- { delete fDetectorMessenger;}
+ { 
+     delete fLogicStrip;
+     delete fDetectorMessenger;
+ }
 
  G4VPhysicalVolume* DetectorConstruction::Construct()
  {
@@ -110,24 +118,34 @@ DetectorConstruction::DetectorConstruction()
     // 
     fSolidRO=0; fLogicRO=0; fPhysiRO=0; 
 
-    if (fROThickness > 0.)
-    { fSolidRO = new G4Box("Readout",                                       //its name
+    
+    fSolidRO = new G4Box("Readout",                                       //its name
                             fROSizeXY, fROSizeXY, fROThickness);    //its size
 
-      fLogicRO = new G4LogicalVolume(fSolidRO,                              //its solid
+    fLogicRO = new G4LogicalVolume(fSolidRO,                              //its solid
                                      fDefaultMaterial,                      //its material 
                                      "Readout" );                           //its name
 
-      G4double position = 10*mm;
-      fPhysiRO = new G4PVPlacement(0,                                       //no rotation
-                                   G4ThreeVector(0,0,position),             // at (0,0,5mm)
-                                   fLogicRO,                                //its logical volume
-                                   "Readout",                               //its name 
-                                   fLogicWorld,                             //its mother volume
-                                   false,                                   //no boolean operator
-                                   0);                                      //copy number
-
-    }
+    G4double position = 10*mm;
+      
+    fPhysiRO = new G4PVPlacement(0,                                       //no rotation
+                                G4ThreeVector(0,0,position),             // at (0,0,5mm)
+                                fLogicRO,                                //its logical volume
+                                "Readout",                               //its name 
+                                fLogicWorld,                             //its mother volume
+                                false,                                   //no boolean operator
+                                0);
+      
+      // ********* NEW ATTEMPT ****** TEMPORARY COMMENTED OUT *********
+      //fPhysiRO = new G4PVPlacement(0,                                       //no rotation
+      //                             G4ThreeVector(0,0,position),             // at (0,0,5mm)
+      //                             fLogicRO,                                //its logical volume
+      //                             "Readout",                               //its name 
+      //                             fLogicWorld,                             //its mother volume
+      //                             false,                                   //no boolean operator
+      //                             0);                                      //copy number
+      //******************************************************************
+    
     //
     // Strips
     // 
@@ -151,74 +169,71 @@ DetectorConstruction::DetectorConstruction()
         silver->SetVisibility(true);
         silver->SetForceSolid(true);
 
+        G4double dx = (strip_dx+gap);
+        G4double pos = fROThickness-(0.1*fROThickness);
+
         
+        //fSolidStrip = new G4Box("Strip",                                    //its name
+        //                        strip_dx, strip_dy, strip_dz);              //its size
+        
+        G4int n = 10;
+
+        std::vector<DetectorStrip*> stripVec; 
+
+        for (G4int i = 0; i<6; i++){
+            stripVec.push_back(new DetectorStrip(i, strip_dx, strip_dy, strip_dz));
+        }
+
+
+
+        for (G4int i=0; i < 6; i++) {
+
+            std::stringstream name ; name << "Strip" << i ;
+            stripVec.at(i)->createPhysicalVolume(rotm,
+                                                 G4ThreeVector(i*dx-11*cm,-i*dx+10*cm,pos),
+                                                 fLogicRO);
+        }
+        /*
+        G4LogicalVolume *LogicStrip[n];
         fSolidStrip = new G4Box("Strip",                                    //its name
-                                strip_dx, strip_dy, strip_dz);              //its size
+                                strip_dx, strip_dy, strip_dz); 
+
+        for (G4int copyNo = 0; copyNo < nb_strips; copyNo++){
         
-        
-       
-        fLogicStrip = new G4LogicalVolume(fSolidStrip,                      //its Solid
+
+            
+            
+            LogicStrip[copyNo] = new G4LogicalVolume(fSolidStrip,                      //its Solid
                                           fStripMaterial,                   //its material
                                           fStripMaterial->GetName());       //its name
         
+               //its name
+            fPhysiStrip = new G4PVPlacement(rotm,                      // rotation of the strips by 60 degrees
+                                            G4ThreeVector(copyNo*dx-11*cm,-copyNo*dx+10*cm,pos),
+                                            LogicStrip[copyNo],                    // its logical volume
+                                            fStripMaterial->GetName(),      // its name
+                                            fLogicRO,                        // its mother volume
+                                            false,                          // no boolean operator
+                                            copyNo);                        // copy no
         
+
      
-        fLogicStrip->SetVisAttributes(silver);
+        LogicStrip[copyNo]->SetVisAttributes(silver);
+        }
 
-        
-        G4double dx = (strip_dx+gap);
-        G4double pos = fROThickness-(0.1*fROThickness);
-       
-        
-        fPhysiStrip = new G4PVPlacement(rotm,
-                                        G4ThreeVector(-10*cm,+10*cm,pos),
-                                        fLogicStrip,
-                                        fStripMaterial->GetName(),
-                                        fLogicRO,
-                                        false,
-                                        0);
-       
-        fPhysiStrip = new G4PVPlacement(rotm,
-                                        G4ThreeVector(dx-10*cm, -dx+10*cm,pos),
-                                        fLogicStrip,
-                                        fStripMaterial->GetName(),
-                                        fLogicRO,
-                                        false,
-                                        1);
-         
-        fPhysiStrip = new G4PVPlacement(rotm,
-                                        G4ThreeVector(2*dx-10*cm, -2*dx+10*cm,pos),
-                                        fLogicStrip,
-                                        fStripMaterial->GetName(),
-                                        fLogicRO,
-                                        false,
-                                        2);
+// ********* NEW ATTEMPT ****** TEMPORARY COMMENTED OUT *********
+        //fPhysiStrip = new G4PVPlacement(rotm,
+        //                               G4ThreeVector(-10*cm,+10*cm,pos),
+        //                                fLogicStrip,
+        //                                fStripMaterial->GetName(),
+        //                                fLogicRO,
+        //                               false,
+        //                                0);
+        //********************************************************
 
-        fPhysiStrip = new G4PVPlacement(rotm,
-                                        G4ThreeVector(3*dx-10*cm, -3*dx+10*cm,pos),
-                                        fLogicStrip,
-                                        fStripMaterial->GetName(),
-                                        fLogicRO,
-                                        false,
-                                        3);
-        
-        fPhysiStrip = new G4PVPlacement(rotm,
-                                        G4ThreeVector(4*dx-10*cm, -4*dx+10*cm,pos),
-                                        fLogicStrip,
-                                        fStripMaterial->GetName(),
-                                        fLogicRO,
-                                        false,
-                                        4);
-
-        fPhysiStrip = new G4PVPlacement(rotm,
-                                        G4ThreeVector(5*dx-10*cm, -5*dx+10*cm,pos),
-                                        fLogicStrip,
-                                        fStripMaterial->GetName(),
-                                        fLogicRO,
-                                        false,
-                                        5);
+        */
         /*
-        for (G4int copyNo = 0; copyNo<6; copyNo++)
+        for (G4int copyNo = 1; copyNo<6; copyNo++)
         {
             
             //G4Transform3D transform = G4Transform3D(rotm,pos);
@@ -229,42 +244,11 @@ DetectorConstruction::DetectorConstruction()
                                             fLogicRO,                        // its mother volume
                                             false,                          // no boolean operator
                                             copyNo);                        // copy no
-
-           
         }
-       
 
 
-        /*G4int nb_Strips = 10; 
-        G4double gap = 1.*cm;
-
-        //Place strips on the Readout
-
-         fPhysiStrip = new G4PVPlacement(rots,                      // rotation of the strips by 60 degrees
-                                            G4ThreeVector(-copyNo*dx+10*cm,copyNo*dx-11*cm,pos),
-                                            fLogicStrip,                    // its logical volume
-                                            fStripMaterial->GetName(),      // its name
-                                            fLogicRO,                        // its mother volume
-                                            false,                          // no boolean operator
-                                            copyNo);                        // copy no
-        for(G4int istrip = 0; istrip < nb_Strips; istrip++)
-        {
-            G4double dx = istrip*(strip_dx + gap)-11*cm;
-            G4double dy = istrip*(strip_dx + gap)-11*cm;
-            G4RotationMatrix rotm = G4RotationMatrix();
-            rotm.rotateZ(60*deg);
-            G4ThreeVector pos = G4ThreeVector(dx,dy,fROThickness-(0.1*fROThickness));
-            G4Transform3D transform = G4Transform3D(rotm,pos);
-
-            fPhysiStrip = new G4PVPlacement(transform,                      // rotation of the strips by 60 degrees
-                                            fLogicStrip,                    // its logical volume
-                                            fStripMaterial->GetName(),      // its name
-                                            fLogicRO,                       // its mother volume
-                                            false,                          // no boolean operator
-                                            istrip);                        // copy no
-
-        }*/
-    PrintROParameters();
+    */
+    
 
     fLogicWorld->SetVisAttributes (G4VisAttributes::GetInvisible());
 
@@ -285,7 +269,7 @@ DetectorConstruction::DetectorConstruction()
 void DetectorConstruction::PrintROParameters()
 {
     G4cout << "\n------------------------------------------------------------"
-         << "\n---> The readout is " << fNbOfLayers << " 1 PCB: [ "
+         << "\n---> The readout is " << fNbOfStrips << " 1 PCB: [ "
          << fStripThickness/mm << "mm of" << fStripMaterial->GetName()
          << "\n------------------------------------------------------------\n";
 }
@@ -300,9 +284,9 @@ void DetectorConstruction::SetTargetMaterial(G4String materialChoice)
       fStripMaterial = pttoMaterial;
       if ( fLogicStrip )
       {   
-          
+         
         if (fLogicStrip)  fLogicStrip->SetMaterial(fStripMaterial);
-           
+        
         G4RunManager::GetRunManager()->PhysicsHasBeenModified();
       }
   }
@@ -322,6 +306,6 @@ void DetectorConstruction::SetROSizeXY(G4double val)
 
 void DetectorConstruction::SetNbOfLayers(G4int val)
 {
-    fNbOfLayers = val;
+    fNbOfStrips = val;
     G4RunManager::GetRunManager()->ReinitializeGeometry();
 }

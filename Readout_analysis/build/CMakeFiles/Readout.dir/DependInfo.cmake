@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/christos/GEANT4/Readout_analysis/shared/src/ActionInitialization.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/ActionInitialization.cc.o"
   "/Users/christos/GEANT4/Readout_analysis/shared/src/DetectorConstruction.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/DetectorConstruction.cc.o"
   "/Users/christos/GEANT4/Readout_analysis/shared/src/DetectorMessenger.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/DetectorMessenger.cc.o"
+  "/Users/christos/GEANT4/Readout_analysis/shared/src/DetectorStrip.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/DetectorStrip.cc.o"
   "/Users/christos/GEANT4/Readout_analysis/shared/src/EventAction.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/EventAction.cc.o"
   "/Users/christos/GEANT4/Readout_analysis/shared/src/PrimaryGeneratorAction.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/PrimaryGeneratorAction.cc.o"
   "/Users/christos/GEANT4/Readout_analysis/shared/src/RunAction.cc" "/Users/christos/GEANT4/Readout_analysis/build/CMakeFiles/Readout.dir/shared/src/RunAction.cc.o"

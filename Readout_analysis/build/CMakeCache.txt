@@ -238,7 +238,55 @@ Qt5Widgets_DIR:PATH=/opt/local/lib/cmake/Qt5Widgets
 ROOTCINT_EXECUTABLE:FILEPATH=ROOTCINT_EXECUTABLE-NOTFOUND
 
 //Path to a program.
+ROOTCLING_EXECUTABLE:FILEPATH=/opt/local/bin/rootcling
+
+//Path to a program.
 ROOT_CONFIG_EXECUTABLE:FILEPATH=/opt/local/bin/root-config
+
+//Path to a library.
+ROOT_Core_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libCore.so
+
+//Path to a library.
+ROOT_Gpad_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libGpad.so
+
+//Path to a library.
+ROOT_Graf3d_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libGraf3d.so
+
+//Path to a library.
+ROOT_Graf_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libGraf.so
+
+//Path to a library.
+ROOT_Hist_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libHist.so
+
+//Path to a library.
+ROOT_MathCore_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libMathCore.so
+
+//Path to a library.
+ROOT_Matrix_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libMatrix.so
+
+//Path to a library.
+ROOT_MultiProc_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libMultiProc.so
+
+//Path to a library.
+ROOT_Net_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libNet.so
+
+//Path to a library.
+ROOT_Physics_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libPhysics.so
+
+//Path to a library.
+ROOT_Postscript_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libPostscript.so
+
+//Path to a library.
+ROOT_RIO_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libRIO.so
+
+//Path to a library.
+ROOT_Rint_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libRint.so
+
+//Path to a library.
+ROOT_Thread_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libThread.so
+
+//Path to a library.
+ROOT_Tree_LIBRARY:FILEPATH=/opt/local/libexec/root6/lib/root/libTree.so
 
 //Value Computed by CMake
 Readout_BINARY_DIR:STATIC=/Users/christos/GEANT4/Readout_analysis/build
@@ -393,8 +441,40 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding CLHEP
 FIND_PACKAGE_MESSAGE_DETAILS_CLHEP:INTERNAL=[/opt/local/lib/libCLHEP.dylib][/opt/local/include][TRUE][v(2.4.1.0)]
+//Details about finding ROOT
+FIND_PACKAGE_MESSAGE_DETAILS_ROOT:INTERNAL=[/opt/local/bin/root-config][/opt/local/libexec/root6][6.14/06][/opt/local/libexec/root6/include/root][/opt/local/libexec/root6/lib/root/libCore.so;/opt/local/libexec/root6/lib/root/libRIO.so;/opt/local/libexec/root6/lib/root/libNet.so;/opt/local/libexec/root6/lib/root/libHist.so;/opt/local/libexec/root6/lib/root/libGraf.so;/opt/local/libexec/root6/lib/root/libGraf3d.so;/opt/local/libexec/root6/lib/root/libGpad.so;/opt/local/libexec/root6/lib/root/libTree.so;/opt/local/libexec/root6/lib/root/libRint.so;/opt/local/libexec/root6/lib/root/libPostscript.so;/opt/local/libexec/root6/lib/root/libMatrix.so;/opt/local/libexec/root6/lib/root/libPhysics.so;/opt/local/libexec/root6/lib/root/libMathCore.so;/opt/local/libexec/root6/lib/root/libThread.so;/opt/local/libexec/root6/lib/root/libMultiProc.so][/opt/local/libexec/root6/lib/root][v()]
 //ADVANCED property for variable: GCCXML
 GCCXML-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ROOT_CONFIG_EXECUTABLE
 ROOT_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Core_LIBRARY
+ROOT_Core_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Gpad_LIBRARY
+ROOT_Gpad_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Graf3d_LIBRARY
+ROOT_Graf3d_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Graf_LIBRARY
+ROOT_Graf_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Hist_LIBRARY
+ROOT_Hist_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_MathCore_LIBRARY
+ROOT_MathCore_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Matrix_LIBRARY
+ROOT_Matrix_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_MultiProc_LIBRARY
+ROOT_MultiProc_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Net_LIBRARY
+ROOT_Net_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Physics_LIBRARY
+ROOT_Physics_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Postscript_LIBRARY
+ROOT_Postscript_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_RIO_LIBRARY
+ROOT_RIO_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Rint_LIBRARY
+ROOT_Rint_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Thread_LIBRARY
+ROOT_Thread_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ROOT_Tree_LIBRARY
+ROOT_Tree_LIBRARY-ADVANCED:INTERNAL=1
 

@@ -1,3 +1,4 @@
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 #include "PrimaryGeneratorAction.hh" 
 
 #include "DetectorConstruction.hh" 
@@ -25,8 +26,8 @@ PrimaryGeneratorAction::PrimaryGeneratorAction(DetectorConstruction *DC)
       G4ParticleDefinition* particle
                         = particleTable->FindParticle(particleName="mu-");
       fParticleGun->SetParticleDefinition(particle);
-      fParticleGun->SetParticlePosition(G4ThreeVector(0.5*cm,0.5*cm,0.1*m));
-      //fParticleGun->SetParticlePosition(G4ThreeVector(-11*cm,+10*cm,0.1*m));
+      //fParticleGun->SetParticlePosition(G4ThreeVector(0.5*cm,0.5*cm,0.1*m));
+      fParticleGun->SetParticlePosition(G4ThreeVector(-11*cm,+10*cm,0.1*m));
       fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,-1.*cm));
       fParticleGun->SetParticleEnergy(5.*GeV);
       
